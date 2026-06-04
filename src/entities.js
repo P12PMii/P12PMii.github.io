@@ -16,7 +16,7 @@ function makePlayer() {
     killCount: 0,
     fireCooldown: FIRE_COOLDOWN,
     fireTimer: 0,
-    projectileDamage: 20,
+    projectileDamage: 12,
     xpRange: XP_PICKUP_RANGE,
     piercing: false,
     multiShot: 1,
@@ -80,11 +80,11 @@ function makeBruiser(wx, wy, elapsedSec) {
 
 // Mini-boss: slow approach → telegraph → dash charge
 function makeBoss(wx, wy, elapsedSec) {
-  const scale = 1 + Math.floor(elapsedSec / 180) * 0.5;
+  const hp = Math.round(game.player.projectileDamage * 40);
   return {
     wx, wy,
-    hp:         Math.round(200 * scale * levelHpMult()),
-    maxHP:      Math.round(200 * scale * levelHpMult()),
+    hp,
+    maxHP: hp,
     speed:      45,
     damage:     ENEMY_DAMAGE * 3,
     alive:      true,
@@ -134,11 +134,11 @@ function makeSplitter(wx, wy, elapsedSec) {
 
 // Smaller boss — same 3-phase AI, weaker stats, can stack
 function makeMiniBoss(wx, wy, elapsedSec) {
-  const scale = 1 + Math.floor(elapsedSec / 180) * 0.4;
+  const hp = Math.round(game.player.projectileDamage * 25);
   return {
     wx, wy,
-    hp:         Math.round(60 * scale * levelHpMult()),
-    maxHP:      Math.round(60 * scale * levelHpMult()),
+    hp,
+    maxHP: hp,
     speed:      58,
     damage:     ENEMY_DAMAGE * 2,
     alive:      true,

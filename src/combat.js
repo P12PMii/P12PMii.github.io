@@ -1,15 +1,8 @@
 function autoFire() {
   const p = game.player;
 
-  let nearest = null, nearestDist = Infinity;
-  for (const e of game.enemies) {
-    if (!e.alive) continue;
-    const d = Math.hypot(e.wx - p.wx, e.wy - p.wy);
-    if (d < nearestDist) { nearestDist = d; nearest = e; }
-  }
-
-  let baseAngle = 0;
-  if (nearest) baseAngle = Math.atan2(nearest.wy - p.wy, nearest.wx - p.wx);
+  // Aim toward mouse cursor; player is always at screen centre (W/2, H/2)
+  const baseAngle = Math.atan2(Input.mouseY - H / 2, Input.mouseX - W / 2);
 
   const shots  = p.multiShot || 1;
   const spread = shots > 1 ? 0.22 : 0;
