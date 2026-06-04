@@ -259,8 +259,8 @@ function drawMenu() {
 
   ctx.textAlign    = 'center';
   ctx.textBaseline = 'middle';
-  ctx.font = '28px "Press Start 2P", monospace';
-  shadowText(ctx, 'MINIMY',  W / 2, H / 2 - 145, '#00FFFF', '#000000', 4);
+  ctx.font = '22px "Press Start 2P", monospace';
+  shadowText(ctx, 'p12pmii', W / 2, H / 2 - 145, '#00FFFF', '#000000', 4);
   ctx.font = '22px "Press Start 2P", monospace';
   shadowText(ctx, 'SURVIVE', W / 2, H / 2 - 110, '#FFFFFF', '#000000', 4);
   ctx.font      = '7px "Press Start 2P", monospace';
