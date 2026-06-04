@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minimy Survive</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0a0a0a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Press Start 2P', monospace;
+    }
+
+    #gameCanvas {
+      display: block;
+      image-rendering: pixelated;
+      cursor: crosshair;
+    }
+
+    /* ── Pixel-font fallback while Google Fonts loads ── */
+    .pf { font-family: 'Press Start 2P', 'Courier New', monospace; }
+  </style>
+</head>
+<body>
+  <canvas id="gameCanvas"></canvas>
+  <script src="src/constants.js"></script>
+  <script src="src/canvas.js"></script>
+  <script src="src/utils.js"></script>
+  <script src="src/entities.js"></script>
+  <script src="src/upgrades.js"></script>
+  <script src="src/state.js"></script>
+  <script src="src/input.js"></script>
+  <script src="src/spawner.js"></script>
+  <script src="src/combat.js"></script>
+  <script src="src/update.js"></script>
+  <script src="src/draw.js"></script>
+  <script src="src/ui.js"></script>
+  <script src="src/main.js"></script>
+</body>
+</html>
